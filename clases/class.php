@@ -53,16 +53,6 @@ class Login extends Mysql{
 		{
 			echo "invalid_login";
 		}
-	}		
-	
-	public function deslogin() {
-				
-		@session_start();
-		@session_unset();
-		@session_destroy();
-		@session_write_close();
-		@setcookie(session_name(),'',0,'/');
-		
-		}
+	  }		
 	}
 ?>

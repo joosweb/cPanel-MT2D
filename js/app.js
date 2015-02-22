@@ -58,4 +58,24 @@ $(document).ready(function() {
 		}); // close ajax 
 	  }
 	}); // close btn-login function
+
+	// cerrar session 
+
+	$("#cerrar_session").click(function(){
+		$.ajax({
+			url: "ajax/logout.php",
+			beforeSend: function(){
+			$("#loginuser").html('<img src="images/loading.gif">');	
+			},
+			success: function(response){
+			var delay = 2000; //Your delay in milliseconds
+			setTimeout(function(){ window.location = 'index.php'; }, delay);	
+			}
+
+		});
+	});
+
+	/// 
+
+
 }); // close document ready
