@@ -54,7 +54,7 @@ $(document).ready(function() {
 			var delay = 2000; //Your delay in milliseconds
 			setTimeout(function(){ window.location = 'panel.php'; }, delay);	
 			}
-			},
+		  },
 		}); // close ajax 
 	  }
 	}); // close btn-login function
@@ -74,8 +74,17 @@ $(document).ready(function() {
 
 		});
 	});
-
 	/// 
-
-
 }); // close document ready
+
+	function pagescharge(page){
+
+		$.ajax({
+				beforeSend: function() {
+				$("#pages").html("<center><img src='images/ajax-loader.gif'>")
+				},
+				success: function() {
+				$("#pages").load('pages/'+page+'.php').slideUp(300).delay(800).fadeIn(400);
+			}
+		});
+	}
